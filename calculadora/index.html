@@ -113,14 +113,13 @@
                 const aposta2 = (inv2 / soma) * total;
 
                 const ganho1 = aposta1 * odd1;
-                const ganho2 = aposta2 * odd2;
+                const lucro = ganho1 - total;
+                
+                const porcentagemLucro = (lucro / total) * 100;
 
-                const lucro = ganho1 - total; /* O lucro será o mesmo para ambas as odds */
-
-                const porcentagem = ganho1 + ganho2 + total / total
                 resultadoDiv.innerHTML = `
                     <strong>É uma surebet!</strong><br>
-                    <br><h2>${porcentagem}</h2>
+                    <br><h2>Lucro: ${porcentagemLucro.toFixed(2)}%</h2>
                     <br><strong>Valor a apostar:</strong><br>
                     Aposta na odd ${odd1}: R$ ${aposta1.toFixed(2)}<br>
                     Aposta na odd ${odd2}: R$ ${aposta2.toFixed(2)}<br>
@@ -134,4 +133,6 @@
     </script>
 </body>
 </html>
+
+
 
